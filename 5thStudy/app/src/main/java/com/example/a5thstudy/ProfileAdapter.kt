@@ -4,10 +4,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.Switch
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 class ProfileAdapter(val profileList: ArrayList<Profiles>) : RecyclerView.Adapter<ProfileAdapter.CustomViewHolder>() {
+    //, val userCheckBoxStatus: ArrayList<UserCheckStatus>
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int
     ): ProfileAdapter.CustomViewHolder {
@@ -21,6 +23,14 @@ class ProfileAdapter(val profileList: ArrayList<Profiles>) : RecyclerView.Adapte
         holder.name.text = profileList.get(position).name //setText느낌
         holder.age.text = profileList.get(position).age.toString()
         holder.job.text = profileList.get(position).job
+
+        //holder.bind(profileList[position], userCheckBoxStatus[position])
+
+        holder.switch.isChecked = profileList.get(position).isChecked
+
+        holder.switch.setOnClickListener {
+            profileList.get(position).isChecked = holder.switch.isChecked
+        }
     }
 
     override fun getItemCount(): Int {
@@ -33,6 +43,9 @@ class ProfileAdapter(val profileList: ArrayList<Profiles>) : RecyclerView.Adapte
         val name = itemView.findViewById<TextView>(R.id.tv_name)
         val age = itemView.findViewById<TextView>(R.id.tv_age)
         val job = itemView.findViewById<TextView>(R.id.tv_job)
+
+        val switch = itemView.findViewById<Switch>(R.id.test_switch)
+
     }
 
 }
