@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/camera_item"
+        android:icon="@drawable/umbrella"
+        android:title="Camera" />
+    <item
+        android:id="@+id/HomeItem"
+        android:icon="@drawable/home"
+        android:title="Home" />
+    <item
+        android:id="@+id/PlantItem"
+        android:icon="@drawable/music"
+        android:title="Plant" />
+</menu>
